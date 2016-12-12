@@ -3,7 +3,7 @@
 * [Overview](#overview)
 * [User Guide](#user-guide)
       * [Local IP](#myip)
-      * [String Getter](#gopath-and-bin)
+      * [GOPATH & Bin config](#gopath-and-bin)
 * [Build and Install](#build-and-install)
 * [License](#license)
       
@@ -17,13 +17,17 @@ I'm adding to when I need quick and dirty solutions.
 
 #### myip
 
+```bash
 ~/bin/gotools myip
+```
 
 will display your ip
 
 #### GoPath and Bin
 
+```bash
 ~/bin/gotools gopath
+```
 
 Where this command is called from your current working directory is used
 for the $GOPATH and modifies $PATH to include $GOPATH/bin
