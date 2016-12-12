@@ -1,5 +1,7 @@
 # GoTools
 
+[![Go Report Card](https://goreportcard.com/report/github.com/jasonlam604/gotools)](https://goreportcard.com/report/github.com/jasonlam604/gotools)
+
 * [Overview](#overview)
 * [User Guide](#user-guide)
       * [Local IP](#myip)
