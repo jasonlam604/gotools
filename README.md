@@ -29,8 +29,8 @@ will display your ip
 ~/bin/gotools gopath
 ```
 
-Where this command is called from your current working directory is used
-for the $GOPATH and modifies $PATH to include $GOPATH/bin
+When this command is called your current working directory is set at the $GOPATH and $GOPATH/bin
+is add to your PATH.  Any existing $GOPATH/bin defined in $PATH will be removed first.
 
 ## Build and Install
 
