@@ -16,11 +16,11 @@ package cmd
 
 import (
 	"fmt"
-	"os"
-    "path"
-    "strings"
-	"syscall"
 	"github.com/spf13/cobra"
+	"os"
+	"path"
+	"strings"
+	"syscall"
 )
 
 // gopathCmd represents the gopath command
@@ -37,7 +37,7 @@ var gopathCmd = &cobra.Command{
 		clearGoPathBin()
 
 		setGoPathAndBin()
-		
+
 		displayUpdates()
 
 		updateShell()
@@ -54,43 +54,43 @@ func loadPathInfo() {
 	goPathOrig = os.Getenv("GOPATH")
 }
 
-func clearGoPathBin()  {
-	
-	if(len(goPathOrig) > 0) {
-		
-		var goBin = path.Join(goPathOrig,"bin");
-        
-        if strings.Index(os.Getenv("PATH"), goBin) > -1 {
-        	
-        	var path string = os.Getenv("PATH");
-        	
-        	path = strings.Replace(path, goBin, "", -1) 
-        	
-        	path = strings.Replace(path, "::", ":", -1)
-        	
-        	if strings.HasSuffix(path,":") {
-        		path = strings.TrimRight(path, ":")
-        	}
-        	
-        	if strings.HasPrefix(path,":") {
-        		path = strings.TrimLeft(path, ":")
-        	}
-        	
-        	os.Setenv("PATH", path)
-        } 
+func clearGoPathBin() {
+
+	if len(goPathOrig) > 0 {
+
+		var goBin = path.Join(goPathOrig, "bin")
+
+		if strings.Index(os.Getenv("PATH"), goBin) > -1 {
+
+			var path string = os.Getenv("PATH")
+
+			path = strings.Replace(path, goBin, "", -1)
+
+			path = strings.Replace(path, "::", ":", -1)
+
+			if strings.HasSuffix(path, ":") {
+				path = strings.TrimRight(path, ":")
+			}
+
+			if strings.HasPrefix(path, ":") {
+				path = strings.TrimLeft(path, ":")
+			}
+
+			os.Setenv("PATH", path)
+		}
 	}
 }
 
 func setGoPathAndBin() {
-	
+
 	pwd, err := os.Getwd()
-    if err != nil {
+	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
-    }
+	}
 
 	os.Setenv("GOPATH", pwd)
-	os.Setenv("PATH", os.Getenv("PATH") + ":" + path.Join(pwd,"bin"))	
+	os.Setenv("PATH", os.Getenv("PATH")+":"+path.Join(pwd, "bin"))
 }
 
 func displayUpdates() {

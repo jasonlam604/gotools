@@ -17,22 +17,22 @@ package cmd
 import (
 	"errors"
 	"fmt"
-     "net"
 	"github.com/spf13/cobra"
+	"net"
 )
 
 // myipCmd represents the myip command
 var myipCmd = &cobra.Command{
 	Use:   "myip",
 	Short: "Finds your local IP, ignores loopback",
-	Long: `Finds your local IP, ignores loopback, not much more to say about this`,
+	Long:  `Finds your local IP, ignores loopback, not much more to say about this`,
 	Run: func(cmd *cobra.Command, args []string) {
 
-        	ip, err := externalIP()
-        	if err != nil {
-              	  fmt.Println(err)
-        	}
-        	fmt.Println(ip)
+		ip, err := externalIP()
+		if err != nil {
+			fmt.Println(err)
+		}
+		fmt.Println(ip)
 
 	},
 }
