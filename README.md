@@ -21,7 +21,7 @@ I'm adding to when I need quick and dirty solutions.
 ~/bin/gotools myip
 ```
 
-will display your ip
+Displays your local IP.
 
 #### GoPath and Bin
 
@@ -31,6 +31,9 @@ will display your ip
 
 When this command is called your current working directory is set at the $GOPATH and $GOPATH/bin
 is add to your PATH.  Any existing $GOPATH/bin defined in $PATH will be removed first.
+
+This utility is handy when you have multiple *golang* projects in multiple folders especially in cases where
+directory paths are long (too much typing and less error prone); allows you to quickly set the $GOPATH and it's respective bin directory.
 
 ## Build and Install
 
